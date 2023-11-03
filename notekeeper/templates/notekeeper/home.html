@@ -1,0 +1,33 @@
+{% extends 'notekeeper/base.html' %}
+{% block content %}
+{% if note %}
+<table class="table mt-4">
+    <thead class="table-primary">
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for nt in note%}
+      <tr>
+        <th>{{nt.title}}</th>
+        <td>{{nt.description}}</td>
+        <td>
+            <a href="{% url 'update' nt.id%}"><i class="fas fa-edit" style="color: #089118;"></i></a>
+        </td>
+        <td>
+            <a href="{% url 'delete' nt.id %}"><i class="fa-solid fa-trash" style="color: #f21202;"></i></a>
+        </td>
+      </tr>
+    {% endfor %}  
+    </tbody>
+  </table>
+  
+ 
+{% else %}
+  <h1>no records</h1>
+{% endif %}
+{% endblock content %}

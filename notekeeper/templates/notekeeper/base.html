@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    {% comment %} start of css file {% endcomment %}
+    <link rel="stylesheet" href="{% static 'notekeeper/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'notekeeper/css/bootstrap.css' %}">
+    {% comment %} end of css file {% endcomment %}
+</head>
+<body>
+   {% include 'notekeeper/nav.html' %}
+   <div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+             {% include 'notekeeper/sidebar.html' %}
+        </div>
+        <div class="col-9">
+             {% include 'notekeeper/messages.html' %}
+             {% block content %}{% endblock content %}
+        </div>
+    </div>
+   </div>
+
+
+
+
+    {% comment %} start of js file territory {% endcomment %}
+    <script src="{% static 'notekeeper/js/all.min.js' %}"></script>
+    <script src="{% static 'notekeeper/js/bootstrap.js' %}"></script>
+    <script src="{% static 'notekeeper/js/jquery.js' %}"></script>
+    <script src="{% static 'notekeeper/js/popper.js' %}"></script>
+    {% comment %} end of js file territory {% endcomment %}
+</body>
+</html>

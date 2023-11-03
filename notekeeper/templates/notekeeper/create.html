@@ -1,0 +1,11 @@
+{% extends 'notekeeper/base.html' %}
+{% block content %}
+<div class="container mt-4">
+<form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Submit" class="btn btn-success">
+    <a href="{% url 'home' %}" class="btn btn-primary">Back To Home</a>
+</form>
+</div>
+{% endblock content %}
