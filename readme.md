@@ -6,7 +6,7 @@ This is a note taking application created using Python + Django Framework.
 
 pip install -r requirements.txt
 
-#Home Page
+# Home Page
 ![home](https://github.com/user-attachments/assets/47b6c9ae-310b-4b4f-bb27-b9f148c0eb38)
 # Create Note Page
 ![createnotes](https://github.com/user-attachments/assets/82898005-0b89-40fd-bf24-4aad59caaf0a)
